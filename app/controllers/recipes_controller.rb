@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    render plain: "Hello"
+
   end
 
   def show
