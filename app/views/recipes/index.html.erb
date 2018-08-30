@@ -1,2 +1,23 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<div class="col-md-12">
+  <h1>Recipes</h1>
+  <%= link_to 'New', new_recipe_url %>
+</div>
+<div class="col-md-6">
+ <h2>Name</h2>
+</div>
+<div class="col-md-6">
+ <h2>Cuisine</h2>
+</div>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+  <div class="col-md-6">
+   <p><%= recipe.name %></p>
+   <%= link_to 'Show', recipe_path(recipe) %>
+  </div>
+  <div class="col-md-6">
+   <p><%= recipe.cuisine %></p>
+   <%= link_to 'Edit', edit_recipe_path(recipe) %>
+   <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+  <% end %>
+</div>

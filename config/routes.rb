@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :recipes
   root to: 'recipes#index'
-  # get 'recipes/index'
+  get 'recipes/index'
   # get 'recipes/show'
   # get 'recipes/create'
   # get 'recipes/new'
